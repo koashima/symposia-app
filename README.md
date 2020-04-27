@@ -27,8 +27,8 @@
 <br>
 
 ## Getting Started
-[click this future link to check out the app in Heroku](https://github.com/koashima/symposia-app.git)
-
+[Check out the app on Heroku](https://symposia-app-koa.herokuapp.com)
+[Check out a list of all past commits](https://github.com/koashima/symposia-app.git)
 
 <br>
 
