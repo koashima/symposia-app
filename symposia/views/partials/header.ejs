@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>symposia</title>
+</head>
+<body>
+  <main>
+    <div class="navbar-fixed">
+        <nav class="amber nav-extended">
+          <div class="nav-wrapper">
+            <a href="/symposia/chronicle" class="brand-logo left"><i id="s" class="material-icons">strikethrough_s</i>ymposia</a>
+            <ul class="right">
+              <ul>
+                <% if (user) { %>
+                  <li> <a href="/symposia/list" class="">SYMPOSIA</a></li>             
+                  <li> <a href="/symposia/new" class="">NEW SYMPOSIUM</a></li>             
+                  <li> <a href="/logout"><i class="material-icons left">trending_flat</i>LOG OUT</a></li> 
+                <% } else { %>
+                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>LOGIN WITH GOOGLE</a>
+                <% } %>
+                </ul>
+            </ul>
+          </div>
+        </nav>
+      </div>
+<main>

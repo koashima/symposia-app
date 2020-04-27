@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+
+<h1 class="text-align center"><%= symposium.name %></h1>
+
+<% if (symposium.description !== null) { %>
+  <div>
+    <p><%= symposium.description %></p>
+  </div>
+<% } else { %>
+  <h5>No Symposium Yet</h5>
+<% } %>
+
+<form class="col s12" action="/symposia/<%= symposium._id%>/description" method="POST">
+  <input name="description">
+  <button class="btn amber"type="submit">Add Symposium Description</button>
+</form>
+
+<div class="container center">
+  <button class="btn amber center">
+    <a id="swag" href="/symposia/<%= symposium._id%>/edit">Edit Symposium Name</a>
+  </button>
+</div>
+
+<br>
+<br>
+
+<h3>Comments</h3>
+<div class="row">
+    <form class="col s12" action="/symposia/<%= symposium._id%>/comments" method="POST">
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea name="content" id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Make a comment ;)</label>
+        </div>
+      </div>
+      <input class="btn amber" id="cmntBtn" type="submit" value="Add Comment">
+    </form>
+</div>
+
+  <% if (symposium.comments.length) { %>
+    <table>
+        <thead>
+           <tr>
+             <th>Date</th>
+             <th>Comment</th>
+           </tr>
+        <thead>
+        <tbody>
+        <% symposium.comments.forEach( (c) => { %>
+        <tr>
+            <td><%= c.createdAt.toLocaleDateString() %></td>
+            <td><%= c.content %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Comments Yet</h5>
+  <% } %>
+
+<%- include('../partials/footer') %>

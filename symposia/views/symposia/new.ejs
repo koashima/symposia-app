@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1 class="text-algin center"><%= title %></h1>
+    
+    <div class="container">
+    <form id="new-form" action="/symposia/chronicle" method="POST">
+        <label>symposium name:</label>
+        <input type="text" name="name" placeholder="enter one-of-a-kind name here">
+        <input class="align right amber btn" type="submit" value="create symposium">
+      </form>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <h1 class="text-align center">list of all symposia</h1>
+    <table class="centered highlight">
+        <tbody>
+          <% symposium.forEach( (s) => { %>
+            <tr>
+                <td>
+                    <a href="/symposia/<%=s._id%>"><%= s.name %></a>              
+                <form action="/symposia/<%= s._id %>?_method=DELETE" method="POST">
+                    <button class="btn-small amber right"type="submit">X</button>
+              </form>
+            </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>      
+</div>
+
+<%- include('../partials/footer') %>
